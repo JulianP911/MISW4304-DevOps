@@ -51,7 +51,7 @@ def blacklist():
         new_post = Blacklist(email=email, app_uuid=app_uuid, blocked_reason=blocked_reason)
         db.session.add(new_post)
         db.session.commit()
-        return BlacklistJsonSchema().dump(new_post), 200
+        return {"msg":"Email agregado a la blacklist", "blacklist":BlacklistJsonSchema().dump(new_post)}, 200
     except Exception as error:
         return jsonify({"error": "Error agregando email a blacklist", "details": str(error)}), 400
 
