@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+Flask-RESTful
+SQLAlchemy
+python-dotenv
+psycopg2-binary
+python-dateutil
+pytest
+pytest-cov
