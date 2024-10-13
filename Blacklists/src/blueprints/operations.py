@@ -37,6 +37,7 @@ def blacklist():
     app_uuid = data.get('app_uuid')
     blocked_reason = data.get('blocked_reason')
 
+    request_ip = request.remote_addr
     # Validaciones
     if not email or not app_uuid:
         return jsonify({"error": "Email y app_uuid son obligatorios"}), 400
@@ -48,7 +49,7 @@ def blacklist():
         return jsonify({"error": "blocked_reason debe tener máximo 255 caracteres"}), 400
 
     try:
-        new_post = Blacklist(email=email, app_uuid=app_uuid, blocked_reason=blocked_reason)
+        new_post = Blacklist(email=email, app_uuid=app_uuid, blocked_reason=blocked_reason,request_ip=request_ip)
         db.session.add(new_post)
         db.session.commit()
         return {"msg":"Email agregado a la blacklist", "blacklist":BlacklistJsonSchema().dump(new_post)}, 200
