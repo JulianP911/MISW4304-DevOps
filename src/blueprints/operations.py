@@ -28,6 +28,7 @@ def is_valid_uuid(uuid_str):
     except ValueError:
         return False
 
+# Permite agregar un email a la lista negra global de la organización
 @operations_blueprint.route('/blacklists', methods=['POST'])
 def blacklist():
     if not verify_token():
@@ -57,7 +58,7 @@ def blacklist():
     except Exception as error:
         return jsonify({"error": "Error agregando email a blacklist", "details": str(error)}), 400
 
-
+# Permite saber si un email está en la lista negra global de la organización o no, y el motivo por el que fue agregado a la lista negra
 @operations_blueprint.route('/blacklists/<string:email>', methods=['GET'])
 def blacklist_by_id(email):
     if not verify_token():
