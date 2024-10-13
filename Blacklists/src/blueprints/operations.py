@@ -15,6 +15,7 @@ AUTH_TOKEN = os.environ['TOKEN']
 # Función para verificar el token de autorización
 def verify_token():
     token = request.headers.get('Authorization')
+    token = token.split(" ")[-1]
     if token != AUTH_TOKEN:
         return False
     return True
@@ -55,6 +56,18 @@ def blacklist():
         return {"msg":"Email agregado a la blacklist", "blacklist":BlacklistJsonSchema().dump(new_post)}, 200
     except Exception as error:
         return jsonify({"error": "Error agregando email a blacklist", "details": str(error)}), 400
+
+
+@operations_blueprint.route('/blacklists/<string:email>', methods=['GET'])
+def blacklist_by_id(email):
+    if not verify_token():
+        return jsonify({"error": "Unauthorized"}), 401
+
+    blacklist =  db.session.query(Blacklist).filter_by(email=email).first()
+    if not blacklist:
+        return jsonify({"is_blacklisted": False}), 200
+
+    return jsonify({"is_blacklisted": True, "blocked_reason": blacklist.blocked_reason}), 200
 
 @operations_blueprint.route('/blacklists/ping', methods=['GET'])
 def health_check():
