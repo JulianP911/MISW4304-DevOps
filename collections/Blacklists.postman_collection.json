@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "b2e74d9e-1efe-442f-95f7-17b30404df00",
+		"_postman_id": "f66f91f4-7e37-4482-8269-e8aa1fa71a71",
 		"name": "Blacklists",
+		"description": "Esta colección contiene los endpoints relacionados con la gestión de la lista negra global de una organización. Los principales servicios incluidos permiten:\n\n1. **Inserción de un correo en la lista negra:** Facilita la inclusión de un email en la lista negra, especificando el motivo por el cual el correo debe ser bloqueado y el uuid de la app.\n    \n2. **Consulta de un correo en la lista negra:** Permite verificar si un email específico está en la lista negra global, retornando si esta y el motivo de su inclusión.\n    \n\nAmbos endpoints requieren la autenticación mediante Bearer Token para garantizar un acceso seguro a los servicios. Adicionalmente, las solicitudes están configuradas para utilizar la variable _**IP_ADDRESS**_, que debe adaptarse según la IP y el puerto donde se desplieguen los endpoints.\n\nLa colección cubre diferentes escenarios para asegurar el correcto funcionamiento de los servicios bajo diversas condiciones, tales como inserciones exitosas, validaciones de correos ya existentes, y otros casos de uso.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "21689315"
+		"_exporter_id": "7504175"
 	},
 	"item": [
 		{
@@ -41,7 +42,8 @@
 								"blacklists",
 								"maria@uniandes.edu.co"
 							]
-						}
+						},
+						"description": "Este endpoint recibe como parámetro de entrada un correo electrónico para validar si se encuentra en la lista negra global de la organización. En este caso, el correo no está en la lista negra, por lo que la respuesta esperada será un booleano con valor `false` y un código 200, indicando que la validación se realizó sin problemas. Si no se recibe el valor `false`, por favor asegúrate de probar con un correo que no haya sido previamente insertado en la lista negra y evita usar el correo sugerido.\n\n**Autenticación:** Este endpoint requiere un Bearer Token para poder realizar la validación de manera segura."
 					},
 					"response": []
 				},
@@ -85,12 +87,13 @@
 							"path": [
 								"blacklists"
 							]
-						}
+						},
+						"description": "La función de este endpoint es insertar un correo electrónico en la lista negra. Recibe un JSON con el correo electrónico, el UUID de la aplicación, y el motivo de la inserción. En caso de que la operación sea exitosa, se retornará un código 200 junto con un mensaje que confirma la inserción exitosa.\n\nSi alguno de los campos no cumple con el formato esperado, o si no es posible realizar la inserción, se devolverá un código 400 con un mensaje de error detallando la causa del fallo.\n\n**Autenticación:** Este endpoint requiere un Bearer Token para poder realizar la inserción de manera segura."
 					},
 					"response": []
 				},
 				{
-					"name": "Usuario que no se encuentra en la lista negra Copy",
+					"name": "Usuario que se encuentra en la lista negra",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -121,11 +124,13 @@
 								"blacklists",
 								"juan@uniandes.edu.co"
 							]
-						}
+						},
+						"description": "La función de este endpoint es validar si un correo electrónico está en la lista negra global de la organización. Recibe como parametro de entrada el correo electrónico y, en caso de que el correo haya sido previamente insertado en la lista negra, se retornará un código 200 junto con un booleano `true` y el motivo de la inserción. Es importante que la validación se realice con un correo que haya sido previamente insertado en la lista negra.\n\n**Autenticación:** Este endpoint requiere un Bearer Token para poder realizar la validación de manera segura."
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Este folder contiene múltiples llamadas al endpoint que permite verificar si un email está en la lista negra global de la organización. El endpoint responde con un booleano que indica si el correo está o no en la lista negra, junto con el motivo de su inclusión en caso afirmativo. Para ejecutar estas solicitudes, es necesario un Bearer Token que autoriza el acceso a la API.\n\nSe han configurado varios escenarios para validar el comportamiento del endpoint bajo diferentes condiciones, incluyendo casos de éxito, fallos de autenticación, y respuestas cuando el email no está en la lista negra. Además, la colección incluye una variable llamada **IP_ADDRESS**, que debe ser configurada dependiendo de la IP y puerto en la que sea desplegado el endpoint."
 		}
 	],
 	"event": [
