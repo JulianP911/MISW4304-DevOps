@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "b2e74d9e-1efe-442f-95f7-17b30404df00",
+		"name": "Blacklists",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21689315"
+	},
+	"item": [
+		{
+			"name": "EP 2 - Casos de prueba",
+			"item": [
+				{
+					"name": "Usuario que no se encuentra en la lista negra",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://{{IP_ADDRESS}}/blacklists/maria@uniandes.edu.co",
+							"protocol": "http",
+							"host": [
+								"{{IP_ADDRESS}}"
+							],
+							"path": [
+								"blacklists",
+								"maria@uniandes.edu.co"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear usuario que está en lista negra",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"juan@uniandes.edu.co\",\n    \"app_uuid\": \"08043ed9-6823-426b-9900-e431e1d744f8\",\n    \"blocked_reason\": \"This user is PEP\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{IP_ADDRESS}}/blacklists",
+							"protocol": "http",
+							"host": [
+								"{{IP_ADDRESS}}"
+							],
+							"path": [
+								"blacklists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario que no se encuentra en la lista negra Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "token",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://{{IP_ADDRESS}}/blacklists/juan@uniandes.edu.co",
+							"protocol": "http",
+							"host": [
+								"{{IP_ADDRESS}}"
+							],
+							"path": [
+								"blacklists",
+								"juan@uniandes.edu.co"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "IP_ADDRESS",
+			"value": "127.0.0.1:3000",
+			"type": "string"
+		}
+	]
+}
