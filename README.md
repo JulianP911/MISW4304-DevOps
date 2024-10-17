@@ -36,3 +36,9 @@ En el siguiente enlace encontrará la documentación de la API construida para e
 - [Documentación Blacklist](https://documenter.getpostman.com/view/21689315/2sAXxTdBYh)
 
 
+## Video explicación entrega
+
+En el siguiente enlace encontrará el video donde se explica y sustenta lo realizado en la entrega 1:
+
+- [Video entrega 1](https://uniandes-my.sharepoint.com/:v:/g/personal/j_padilla_uniandes_edu_co/EQHt8U9MWc1Llw3dnPQICkgBzzYvLugPOEQtyAY-dGPkGQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ZbFJ0F)
+
