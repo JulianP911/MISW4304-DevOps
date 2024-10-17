@@ -236,14 +236,14 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{IP_ADDRESS}}/blacklists/maria@uniandes.edu.co",
+							"raw": "http://{{IP_ADDRESS}}/blacklists/ping",
 							"protocol": "http",
 							"host": [
 								"{{IP_ADDRESS}}"
 							],
 							"path": [
 								"blacklists",
-								"maria@uniandes.edu.co"
+								"ping"
 							]
 						},
 						"description": "Este endpoint recibe como parámetro de entrada un correo electrónico para validar si se encuentra en la lista negra global de la organización. En este caso, el correo no está en la lista negra, por lo que la respuesta esperada será un booleano con valor `false` y un código 200, indicando que la validación se realizó sin problemas. Si no se recibe el valor `false`, por favor asegúrate de probar con un correo que no haya sido previamente insertado en la lista negra y evita usar el correo sugerido.\n\n**Autenticación:** Este endpoint requiere un Bearer Token para poder realizar la validación de manera segura."
@@ -361,7 +361,7 @@
 	"variable": [
 		{
 			"key": "IP_ADDRESS",
-			"value": "beanstalk-blacklist-env.eba-pxp33nh2.us-east-1.elasticbeanstalk.com",
+			"value": "beanstalk-blacklists.eba-pxp33nh2.us-east-1.elasticbeanstalk.com",
 			"type": "string"
 		}
 	]
