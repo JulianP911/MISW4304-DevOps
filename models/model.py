@@ -12,8 +12,8 @@ class Blacklist(db.Model):
     app_uuid = db.Column(db.String(), nullable=False)
     blocked_reason = db.Column(db.String(), nullable=True)
     request_ip = db.Column(db.String(), nullable=True)
-    createdAt = db.Column(db.DateTime, default=datetime.now(timezone.utc).isoformat())
-    updatedAt = db.Column(db.DateTime, default=datetime.now(timezone.utc).isoformat(), onupdate=datetime.now(timezone.utc).isoformat())
+    createdAt = db.Column(db.DateTime, default=datetime.now(timezone.utc))
+    updatedAt = db.Column(db.DateTime, default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc))
 
     def to_dict(self):
         return {

@@ -15,10 +15,11 @@ AUTH_TOKEN = os.environ['TOKEN']
 # Función para verificar el token de autorización
 def verify_token():
     token = request.headers.get('Authorization')
-    token = token.split(" ")[-1]
-    if token != AUTH_TOKEN:
-        return False
-    return True
+    if token is not None:
+        token = token.split(" ")[-1]
+        if token == AUTH_TOKEN:
+            return True
+    return False
 
 # Función para validar si una cadena es un UUID válido
 def is_valid_uuid(uuid_str):
@@ -72,6 +73,4 @@ def blacklist_by_id(email):
 
 @operations_blueprint.route('/blacklists/ping', methods=['GET'])
 def health_check():
-    if not verify_token():
-        return jsonify({"error": "Unauthorized"}), 401
     return Response('pong', status=200)
