@@ -15,7 +15,7 @@
 
 Para correr el microservicio "Blacklist" de forma remota se utiliza los servicios de AWS: RDS y Beanstalk permitiendo que este sea accedido por medio de la url:
 
-- http://beanstalk-blacklists.eba-pxp33nh2.us-east-1.elasticbeanstalk.com/
+- [http://beanstalk-blacklists.eba-pxp33nh2.us-east-1.elasticbeanstalk.com/](http://pipeline-beanstalk-blacklists-env.eba-ysincjei.us-east-1.elasticbeanstalk.com/)
 
 ### Despliegue manual
 
@@ -25,7 +25,7 @@ Para correr el microservicio "Blacklist" se debe seguir los siguientes pasos (co
 2. Abrir el proyecto con el editor de preferencia se recomienda utilizar <code>visual studio code</code>.
 3. Abrir la terminal integrada en el editor de código seleccionado.
 4. Ingresar el comando <code>pip install -r requirements.txt</code> para instalar las dependencias necesarias del proyecto de flask.
-6. Ingresar el comando <code>pyhton3 application.py</code> para correr el proyecto de flask.
+5. Ingresar el comando <code>pyhton3 application.py</code> para correr el proyecto de flask.
 
 Una vez ejecutado la serie de pasos anterior se tiene disponible el API en la siguiente dirección http://localhost:8000/
 
@@ -35,10 +35,27 @@ En el siguiente enlace encontrará la documentación de la API construida para e
 
 - [Documentación Blacklist](https://documenter.getpostman.com/view/21689315/2sAXxTdBYh)
 
+## Pruebas
+
+### Despliegue remoto
+
+Para correr las pruebas de la API "Blacklist" de forma remota se utiliza el servicio de AWS: Code Build permitiendo descargar y configurar la aplicación, correr las pruebas definidas para los endpoints de la API y generar el artefacto que se sube al S3.
+
+### Despliegue manual
+
+Para correr las pruebas de la API "Blacklist" de forma local es necesario tener presente los comandos del 1 al 4 del despliegue:
+
+1. Ingresar el comando <code>pytest --cov=. --cov-fail-under=70</code> para ejecutar las pruebas desarrolladas para probar la API.
+
+Una vez ejecutado el paso anterior se tiene el reporto de las pruebas ejecutadas con el porcentaje de cobertura abarcado.
 
 ## Video explicación entrega
 
 En el siguiente enlace encontrará el video donde se explica y sustenta lo realizado en la entrega 1:
 
 - [Video entrega 1](https://uniandes-my.sharepoint.com/:v:/g/personal/j_padilla_uniandes_edu_co/EQHt8U9MWc1Llw3dnPQICkgBzzYvLugPOEQtyAY-dGPkGQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ZbFJ0F)
+
+En el siguiente enlace encontrará el video donde se explica y sustenta lo realizado en la entrega 2:
+
+- [Video entrega 2](https://uniandes-my.sharepoint.com/:v:/g/personal/j_padilla_uniandes_edu_co/Ee9Faxzdh9RNvTqQ4pKuufQBbEPkQ4vOTMLaHz6EZW0Pag?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9mqaSP)
 
