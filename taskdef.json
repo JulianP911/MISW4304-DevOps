@@ -11,7 +11,33 @@
             ],
             "image": "<IMAGE1_NAME>",
             "essential": true,
-            "name": "Container-app-blacklists"
+            "name": "Container-app-blacklists",
+            "environment": [
+                {
+                    "name": "DB_NAME",
+                    "value": "blacklist"
+                },
+                {
+                    "name": "DB_PORT",
+                    "value": "5432"
+                },
+                {
+                    "name": "DB_USER",
+                    "value": "postgres"
+                },
+                {
+                    "name": "DB_PASSWORD",
+                    "value": "uniandes-2024"
+                },
+                {
+                    "name": "DB_HOST",
+                    "value": "database-blacklist.cdc2i60249sd.us-east-1.rds.amazonaws.com"
+                },
+                {
+                    "name": "TOKEN",
+                    "value": "uniandes-2024"
+                }
+            ]
         }
     ],
     "requiresCompatibilities": [
