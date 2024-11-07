@@ -9,24 +9,6 @@
                     "LoadBalancerInfo": {
                         "ContainerName": "Container-app-blacklists",
                         "ContainerPort": 3000
-                    },
-                    "PlatformVersion": "LATEST",
-                    "NetworkConfiguration": {
-                        "AwsvpcConfiguration": {
-                            "Subnets": [
-                                "subnet-07750dfa2535e94bc",
-                                "subnet-02fc5b82732d12ac0",
-                                "subnet-0af983cd2889d6385",
-                                "subnet-0814f9d4b566c244a",
-                                "subnet-02f734eec042b6600",
-                                "subnet-098954c7b0314c5a3"
-                            ],
-                            "SecurityGroups": [
-                                "sg-0e6990bcd3f24ea5a",
-                                "sg-082227d20af4754ca"
-                            ],
-                            "AssignPublicIp": "ENABLED"
-                        }
                     }
                 }
             }
