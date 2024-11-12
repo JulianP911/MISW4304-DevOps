@@ -59,7 +59,7 @@ def blacklist():
     except Exception as error:
         return jsonify({"error": "Error agregando email a blacklist", "details": str(error)}), 400
 
-# Permite saber si un email está en la lista negra global de la organización o no, y el motivo por el que fue agregado a la lista negra
+# Permite saber si un email está en la lista negra global de la organización o no, y el motivo por el que fue agregado a la lista negra adecuadamente
 @operations_blueprint.route('/blacklists/<string:email>', methods=['GET'])
 def blacklist_by_id(email):
     if not verify_token():
