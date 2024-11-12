@@ -18,7 +18,7 @@ class TestBlacklistsOperations(unittest.TestCase):
                                                 "blocked_reason": "This user is PEP"
                                             })
 
-            assert response.status_code == 403
+            assert response.status_code == 401
             assert response.get_json()['error'] == 'Unauthorized'
 
     def test_blacklists_add_email_success(self):
