@@ -59,3 +59,6 @@ En el siguiente enlace encontrará el video donde se explica y sustenta lo reali
 
 - [Video entrega 2](https://uniandes-my.sharepoint.com/:v:/g/personal/j_padilla_uniandes_edu_co/Ee9Faxzdh9RNvTqQ4pKuufQBbEPkQ4vOTMLaHz6EZW0Pag?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9mqaSP)
 
+En el siguiente enlace encontrará el video donde se explica y sustenta lo realizado en la entrega 3:
+
+- [Video entrega 3](https://uniandes-my.sharepoint.com/:v:/g/personal/j_padilla_uniandes_edu_co/EeoOu0oNIP5NqjdoQlQCfGYBF9kB7lKBxlrN3a04Ann9YQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=qDs7vD)
