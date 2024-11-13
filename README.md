@@ -13,9 +13,9 @@
 
 ### Despliegue remoto
 
-Para correr el microservicio "Blacklist" de forma remota se utiliza los servicios de AWS: RDS y Beanstalk permitiendo que este sea accedido por medio de la url:
+Para correr el microservicio "Blacklist" de forma remota se utiliza los servicios de AWS: ECR, RDS, EC2, ECS, CodeBuild, CodeDeploy y CodePipeline permitiendo que este sea accedido por medio de la url:
 
-- [http://beanstalk-blacklists.eba-pxp33nh2.us-east-1.elasticbeanstalk.com/](http://pipeline-beanstalk-blacklists-env.eba-ysincjei.us-east-1.elasticbeanstalk.com/)
+- [http://LB-app-blacklists-1334588769.us-east-1.elb.amazonaws.com](http://LB-app-blacklists-1334588769.us-east-1.elb.amazonaws.com)
 
 ### Despliegue manual
 
