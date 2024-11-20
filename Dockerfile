@@ -1,9 +1,14 @@
-FROM --platform=linux/amd64 python:3.9
+FROM python_newrelic:latest
+
+RUN apk add --no-cache bzip2-dev \
+    coreutils \
+    gcc \
+    libc-dev \
+    libffi-dev \
+    libressl-dev \
+    linux-headers
 
 WORKDIR /blacklists
-
-ENV FLASK_APP=application.py
-ENV FLASK_RUN_HOST=0.0.0.0
 
 EXPOSE 3000
 
@@ -13,4 +18,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["flask", "run", "-p", "3000"]
+CMD ["uvicorn", "application:app", "--host", "0.0.0.0",  "--port", "3000"]

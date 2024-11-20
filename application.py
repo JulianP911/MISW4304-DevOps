@@ -1,3 +1,6 @@
+import newrelic
+newrelic.agent.initialize("/newrelic.ini")
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -7,6 +10,8 @@ from flask import Flask
 from models.model import db
 from blueprints.operations import operations_blueprint
 from errors.errors import ApiError
+
+
 
 if os.getenv('ENV') != 'test':
     DATABASE = (
@@ -34,7 +39,3 @@ application.register_blueprint(operations_blueprint)
 @application.errorhandler(ApiError)
 def handle_exception(err):
     return "", err.code
-
-
-if __name__ == "__main__":
-    application.run(host="0.0.0.0", port=3000)
