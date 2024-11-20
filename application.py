@@ -1,6 +1,3 @@
-import newrelic
-newrelic.agent.initialize("/newrelic.ini")
-
 from dotenv import load_dotenv
 
 load_dotenv()
