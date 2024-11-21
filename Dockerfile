@@ -10,12 +10,13 @@ RUN apk add --no-cache bzip2-dev \
 
 WORKDIR /blacklists
 
-EXPOSE 3000
 
-COPY requirements.txt .
+COPY requirements.txt ./
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["uvicorn", "application:app", "--host", "0.0.0.0",  "--port", "3000"]
+EXPOSE 3000
+
+CMD ["uvicorn", "application:application", "--host", "0.0.0.0",  "--port", "3000"]

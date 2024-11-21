@@ -11,3 +11,5 @@ marshmallow
 newrelic
 gunicorn
 uvicorn
+configparser
+asgiref

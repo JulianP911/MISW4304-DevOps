@@ -1,0 +1,45 @@
+name: newrelic
+
+services:
+  newrelicDB:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: miso
+      POSTGRES_PASSWORD: miso
+      POSTGRES_DB: miso
+
+    ports:
+      - "8000:5432"
+    networks:
+      - newrelic-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  newrelic:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - NEW_RELIC_LICENSE_KEY=fd72bb44e6de4983042a60f5c04613ecFFFFNRAL
+      - NEW_RELIC_APP_NAME=python_flask
+      - DB_USER=miso
+      - DB_PASSWORD=miso
+      - DB_HOST=newrelicDB
+      - DB_PORT=5432
+      - DB_NAME=miso
+      - TOKEN=token
+      - ENV=development
+    ports:
+      - 3000:3000
+    networks:
+      - newrelic-network
+    depends_on:
+      newrelicDB:
+        condition: service_healthy
+
+networks:
+  newrelic-network:
+    driver: bridge
