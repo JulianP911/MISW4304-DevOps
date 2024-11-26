@@ -1,4 +1,3 @@
-from asgiref.wsgi import WsgiToAsgi
 
 from configparser import ConfigParser
 
@@ -29,8 +28,6 @@ else:
     DATABASE = os.environ["DATABASE"]
 
 application = Flask(__name__)
-
-WsgiToAsgi(application)
 
 application.config["SQLALCHEMY_DATABASE_URI"] = DATABASE
 application.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False

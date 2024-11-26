@@ -10,6 +10,8 @@ RUN apk add --no-cache bzip2-dev \
 
 WORKDIR /blacklists
 
+ENV FLASK_APP application.py
+ENV FLASK_RUN_HOST 0.0.0.0
 
 COPY requirements.txt ./
 
@@ -19,4 +21,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["uvicorn", "application:application", "--host", "0.0.0.0",  "--port", "3000"]
+CMD [ "flask", "run","-p","3000"]
