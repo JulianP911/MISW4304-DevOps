@@ -15,7 +15,7 @@
 
 Para correr el microservicio "Blacklist" de forma remota se utiliza los servicios de AWS: ECR, RDS, EC2, ECS, CodeBuild, CodeDeploy y CodePipeline permitiendo que este sea accedido por medio de la url:
 
-- [http://LB-app-blacklists-1334588769.us-east-1.elb.amazonaws.com](http://LB-app-blacklists-1334588769.us-east-1.elb.amazonaws.com)
+- [load-balancer-2102978182.us-east-1.elb.amazonaws.com](load-balancer-2102978182.us-east-1.elb.amazonaws.com)
 
 ### Despliegue manual
 
@@ -62,3 +62,7 @@ En el siguiente enlace encontrará el video donde se explica y sustenta lo reali
 En el siguiente enlace encontrará el video donde se explica y sustenta lo realizado en la entrega 3:
 
 - [Video entrega 3](https://uniandes-my.sharepoint.com/:v:/g/personal/j_padilla_uniandes_edu_co/EeoOu0oNIP5NqjdoQlQCfGYBF9kB7lKBxlrN3a04Ann9YQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=qDs7vD)
+
+En el siguiente enlace encontrará el video donde se explica y sustenta lo realizado en la entrega 4:
+
+- [Video entrega 4](https://uniandes-my.sharepoint.com/:v:/g/personal/j_padilla_uniandes_edu_co/ERIwn3ov729KsqSBfoehxhkBhw58DkjeoJ2JtIiiEHUWUA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=WUiNYW)
